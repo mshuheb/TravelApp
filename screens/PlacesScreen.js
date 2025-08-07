@@ -175,7 +175,7 @@ const PlacesScreen = () => {
 
     try {
       const res = await axios.post(
-        `http://192.168.31.48:8000/user/${userId}/wishlist`,
+        `https://travelapp-32u1.onrender.com/user/${userId}/wishlist`,
         {
           placeId: placeId,
         },
@@ -240,7 +240,7 @@ const PlacesScreen = () => {
       if (!userId || !placeId) return;
 
       try {
-        const res = await axios.get(`http://192.168.31.48:8000/user/${userId}`);
+        const res = await axios.get(`https://travelapp-32u1.onrender.com/user/${userId}`);
         setIsWishlisted(res.data.wishlist.includes(placeId));
       } catch (err) {
         console.error('Error fetching wishlist:', err);

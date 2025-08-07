@@ -1259,12 +1259,12 @@ app.get('/getExpenses/:tripId', async (req, res) => {
 //     <h3>Hello,</h3>
 //     <p>${senderName} has invited you to join their trip "<strong>${tripName}</strong>".</p>
 //     <p>Click the button below to join the trip:</p>
-//     <a href="http://192.168.31.48:8000/joinTrip?tripId=${tripId}&email=${email}"
+//     <a href="https://travelapp-32u1.onrender.com/joinTrip?tripId=${tripId}&email=${email}"
 //       style="background-color: #4B61D1; color: white; padding: 10px 20px; text-decoration: none; font-size: 16px; border-radius: 5px;">
 //       Join Trip
 //     </a>
 //     <p>If the button doesn't work, copy and paste this link into your browser:</p>
-//     <p>http://192.168.31.48:8000/joinTrip?tripId=${tripId}&email=${email}</p>
+//     <p>https://travelapp-32u1.onrender.com/joinTrip?tripId=${tripId}&email=${email}</p>
 //     <p>Best regards,</p>
 //     <p>Wanderlog team</p>
 //   `;

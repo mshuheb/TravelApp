@@ -209,7 +209,7 @@ describe('Place', () => {
 
     await waitFor(() => {
       expect(axios.delete).toHaveBeenCalledWith(
-        `http://192.168.31.48:8000/removePlace/${mockItem._id}`,
+        `https://travelapp-32u1.onrender.com/removePlace/${mockItem._id}`,
         {headers: {'Content-Type': 'application/json'}},
       );
       expect(getByText('Place deleted successfully.')).toBeTruthy();

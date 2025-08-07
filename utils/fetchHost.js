@@ -3,7 +3,7 @@ import axios from 'axios';
 export const fetchHost = async (tripId, userId, callback) => {
   try {
     const response = await axios.get(
-      `http://192.168.31.48:8000/trip/${tripId}/host`,
+      `https://travelapp-32u1.onrender.com/trip/${tripId}/host`,
     );
     const hostData = response.data.host;
 

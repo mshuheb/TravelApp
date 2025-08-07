@@ -85,7 +85,7 @@ const LoginScreen = () => {
 
       if (extractedIdToken) {
         const backendResponse = await axios.post(
-          'http://192.168.31.48:8000/google-login',
+          'https://travelapp-32u1.onrender.com/google-login',
           {idToken: extractedIdToken},
         );
 
@@ -128,7 +128,7 @@ const LoginScreen = () => {
       console.log('Facebook Access Token:', accessToken);
 
       const backendResponse = await axios.post(
-        'http://192.168.31.48:8000/facebook-login',
+        'https://travelapp-32u1.onrender.com/facebook-login',
         {
           accessToken,
         },
@@ -162,7 +162,7 @@ const LoginScreen = () => {
 
     try {
       setLoading(true);
-      const response = await axios.post('http://192.168.31.48:8000/signin', {
+      const response = await axios.post('https://travelapp-32u1.onrender.com/signin', {
         email,
         password: signInpassword,
       });
@@ -246,7 +246,7 @@ const LoginScreen = () => {
 
     try {
       const username = email.split('@')[0];
-      const response = await axios.post('http://192.168.31.48:8000/signup', {
+      const response = await axios.post('https://travelapp-32u1.onrender.com/signup', {
         name,
         email,
         username,

@@ -119,7 +119,7 @@ const AiAssistant = ({navigation}) => {
     }
 
     try {
-      const response = await fetch('http://192.168.31.48:8001/chat', {
+      const response = await fetch('http://192.168.31.49:8001/chat', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({message: inputText}),

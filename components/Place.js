@@ -89,7 +89,7 @@ const Place = ({
     setOnModalClose(() => async () => {
       try {
         const response = await axios.delete(
-          `http://192.168.31.48:8000/removePlace/${item._id}`,
+          `https://travelapp-32u1.onrender.com/removePlace/${item._id}`,
           {headers: {'Content-Type': 'application/json'}},
         );
         console.log('Delete response:', response.data);

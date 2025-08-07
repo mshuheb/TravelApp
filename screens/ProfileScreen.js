@@ -56,7 +56,7 @@ const ProfileScreen = ({route}) => {
   const updateName = async () => {
     try {
       const res = await axios.put(
-        `http://192.168.31.48:8000/user/${user._id}/name`,
+        `https://travelapp-32u1.onrender.com/user/${user._id}/name`,
         {
           name: newName,
         },
@@ -75,7 +75,7 @@ const ProfileScreen = ({route}) => {
 
   const fetchUserProfile = async () => {
     try {
-      const res = await axios.get(`http://192.168.31.48:8000/user/${user._id}`);
+      const res = await axios.get(`https://travelapp-32u1.onrender.com/user/${user._id}`);
       if (res.data && res.data.user) {
         setUser(res.data.user);
         console.log('User profile fetched:', res.data.user);
@@ -111,7 +111,7 @@ const ProfileScreen = ({route}) => {
         });
 
         const res = await axios.put(
-          `http://192.168.31.48:8000/user/${user._id}/photo`,
+          `https://travelapp-32u1.onrender.com/user/${user._id}/photo`,
           formData,
           {
             headers: {
@@ -137,7 +137,7 @@ const ProfileScreen = ({route}) => {
   const removePhoto = async () => {
     try {
       const res = await axios.delete(
-        `http://192.168.31.48:8000/user/${user._id}/photo`,
+        `https://travelapp-32u1.onrender.com/user/${user._id}/photo`,
       );
       setUser(res.data.user);
       await fetchUserProfile();
@@ -177,7 +177,7 @@ const ProfileScreen = ({route}) => {
 
     try {
       const res = await axios.put(
-        `http://192.168.31.48:8000/user/${user._id}/password`,
+        `https://travelapp-32u1.onrender.com/user/${user._id}/password`,
         {
           currentPassword,
           newPassword,

@@ -47,7 +47,7 @@ const ExpenseDetails = ({route}) => {
   const fetchComments = async () => {
     try {
       const res = await fetch(
-        `http://192.168.31.48:8000/getComments/${tripId}/${expense._id}`,
+        `https://travelapp-32u1.onrender.com/getComments/${tripId}/${expense._id}`,
       );
       const data = await res.json();
 
@@ -76,7 +76,7 @@ const ExpenseDetails = ({route}) => {
 
     try {
       const res = await fetch(
-        `http://192.168.31.48:8000/addComment/${tripId}/${expense._id}`,
+        `https://travelapp-32u1.onrender.com/addComment/${tripId}/${expense._id}`,
         {
           method: 'POST',
           headers: {
@@ -142,7 +142,7 @@ const ExpenseDetails = ({route}) => {
     setOnModalClose(() => async () => {
       try {
         const response = await axios.delete(
-          `http://192.168.31.48:8000/deleteExpense/${tripId}/${expenseId}`,
+          `https://travelapp-32u1.onrender.com/deleteExpense/${tripId}/${expenseId}`,
         );
 
         if (response.status === 200) {

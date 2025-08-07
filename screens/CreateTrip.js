@@ -174,7 +174,7 @@ const CreateTrip = () => {
 
     try {
       const response = await axios.post(
-        'http://192.168.31.48:8000/trip',
+        'https://travelapp-32u1.onrender.com/trip',
         tripData,
       );
       console.log('Trip created successfully:', response.data);

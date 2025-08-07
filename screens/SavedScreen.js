@@ -72,7 +72,7 @@ const SavedScreen = ({navigation}) => {
 
     const fetchWishlist = async () => {
       try {
-        const res = await axios.get(`http://192.168.31.48:8000/user/${userId}`);
+        const res = await axios.get(`https://travelapp-32u1.onrender.com/user/${userId}`);
         const placeIds = res.data.wishlist || [];
 
         const placePromises = placeIds.map(async id => {

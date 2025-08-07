@@ -121,7 +121,7 @@ describe('ExpenseDetails', () => {
 
     await waitFor(() => {
       expect(global.fetch).toHaveBeenCalledWith(
-        `http://192.168.31.48:8000/addComment/${mockTripId}/${mockExpense._id}`,
+        `https://travelapp-32u1.onrender.com/addComment/${mockTripId}/${mockExpense._id}`,
         expect.objectContaining({
           method: 'POST',
           body: JSON.stringify({

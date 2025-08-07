@@ -90,7 +90,7 @@ const HomeScreen = () => {
   }, [userId]);
 
   const fetchUserData = async () => {
-    const response = await axios.get(`http://192.168.31.48:8000/user/${userId}`);
+    const response = await axios.get(`https://travelapp-32u1.onrender.com/user/${userId}`);
     setUser(response.data);
     setLoadingUser(true);
     try {
@@ -103,7 +103,7 @@ const HomeScreen = () => {
       const decoded = jwtDecode(token);
       const id = decoded.userId;
 
-      const res = await fetch(`http://192.168.31.48:8000/users/${id}`);
+      const res = await fetch(`https://travelapp-32u1.onrender.com/users/${id}`);
       const text = await res.text();
 
       console.log('User data response text:', text);
@@ -135,7 +135,7 @@ const HomeScreen = () => {
     try {
       console.log('userdata', userId);
       const response = await axios.get(
-        `http://192.168.31.48:8000/trips/${userId}`,
+        `https://travelapp-32u1.onrender.com/trips/${userId}`,
       );
       setTrips(response.data);
       setLoading(false);
@@ -187,7 +187,7 @@ const HomeScreen = () => {
     setOnModalClose(() => async () => {
       try {
         const response = await axios.delete(
-          `http://192.168.31.48:8000/trip/${tripId}?userId=${userId}`,
+          `https://travelapp-32u1.onrender.com/trip/${tripId}?userId=${userId}`,
         );
 
         console.log('Trip deleted:', response.data);

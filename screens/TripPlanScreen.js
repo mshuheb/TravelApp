@@ -82,7 +82,7 @@ const TripPlanScreen = () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        `http://192.168.31.48:8000/trip/${tripId}/notes`,
+        `https://travelapp-32u1.onrender.com/trip/${tripId}/notes`,
       );
       setNotes(response.data.notes);
     } catch (error) {
@@ -104,7 +104,7 @@ const TripPlanScreen = () => {
     try {
       setLoading(true);
       const response = await axios.post(
-        `http://192.168.31.48:8000/trip/${tripId}/addNote`,
+        `https://travelapp-32u1.onrender.com/trip/${tripId}/addNote`,
         {
           text: newNote,
         },
@@ -124,7 +124,7 @@ const TripPlanScreen = () => {
     try {
       setLoading(true);
       const response = await axios.put(
-        `http://192.168.31.48:8000/trip/${tripId}/editNote/${id}`,
+        `https://travelapp-32u1.onrender.com/trip/${tripId}/editNote/${id}`,
         {
           text: newText,
         },
@@ -144,7 +144,7 @@ const TripPlanScreen = () => {
   const handleDeleteNote = async noteId => {
     try {
       await fetch(
-        `http://192.168.31.48:8000/trip/${tripId}/deleteNote/${noteId}`,
+        `https://travelapp-32u1.onrender.com/trip/${tripId}/deleteNote/${noteId}`,
         {
           method: 'DELETE',
         },
@@ -265,7 +265,7 @@ const TripPlanScreen = () => {
 
       try {
         const response = await axios.post(
-          `http://192.168.31.48:8000/trip/${tripId}/addPlace`,
+          `https://travelapp-32u1.onrender.com/trip/${tripId}/addPlace`,
           {
             placeId: placeId,
           },
@@ -287,7 +287,7 @@ const TripPlanScreen = () => {
   const fetchPlacesToVisit = async () => {
     try {
       const response = await axios.get(
-        `http://192.168.31.48:8000/trip/${tripId}/placesToVisit`,
+        `https://travelapp-32u1.onrender.com/trip/${tripId}/placesToVisit`,
       );
       const placesToVisit = response.data;
       console.log('Places to Visit:', placesToVisit);
@@ -403,7 +403,7 @@ const TripPlanScreen = () => {
   const fetchItinerary = async () => {
     try {
       const response = await axios.get(
-        `http://192.168.31.48:8000/trip/${tripId}/itinerary`,
+        `https://travelapp-32u1.onrender.com/trip/${tripId}/itinerary`,
       );
       const itinerary = response.data;
 
@@ -451,7 +451,7 @@ const TripPlanScreen = () => {
 
     try {
       const response = await axios.post(
-        `http://192.168.31.48:8000/trips/${tripId}/itinerary/${selectedDate}`,
+        `https://travelapp-32u1.onrender.com/trips/${tripId}/itinerary/${selectedDate}`,
         newActivity,
       );
       console.log('Activity added successfully:', response.data);
@@ -555,7 +555,7 @@ const TripPlanScreen = () => {
     console.log('budge', budget);
     try {
       const response = await axios.put(
-        `http://192.168.31.48:8000/setBudget/${tripId}`,
+        `https://travelapp-32u1.onrender.com/setBudget/${tripId}`,
         {
           budget,
         },
@@ -595,7 +595,7 @@ const TripPlanScreen = () => {
       };
 
       const response = await axios.post(
-        `http://192.168.31.48:8000/addExpense/${tripId}`,
+        `https://travelapp-32u1.onrender.com/addExpense/${tripId}`,
         expenseData,
       );
 
@@ -648,7 +648,7 @@ const TripPlanScreen = () => {
       };
 
       const response = await axios.put(
-        `http://192.168.31.48:8000/editExpense/${tripId}/${modal._id}`,
+        `https://travelapp-32u1.onrender.com/editExpense/${tripId}/${modal._id}`,
         expenseData,
       );
 
@@ -699,7 +699,7 @@ const TripPlanScreen = () => {
   const fetchExpenses = async () => {
     try {
       const response = await axios.get(
-        `http://192.168.31.48:8000/getExpenses/${tripId}`,
+        `https://travelapp-32u1.onrender.com/getExpenses/${tripId}`,
       );
 
       if (response.status === 200) {
@@ -731,7 +731,7 @@ const TripPlanScreen = () => {
     try {
       setLoadingParticipants(true);
       const response = await axios.get(
-        `http://192.168.31.48:8000/trip/${tripId}/participants`,
+        `https://travelapp-32u1.onrender.com/trip/${tripId}/participants`,
       );
       setParticipants(response.data.participants);
     } catch (error) {
@@ -750,7 +750,7 @@ const TripPlanScreen = () => {
 
     try {
       const response = await axios.get(
-        `http://192.168.31.48:8000/users/search?query=${query}&tripId=${tripId}`,
+        `https://travelapp-32u1.onrender.com/users/search?query=${query}&tripId=${tripId}`,
       );
       setSearchResults(response.data);
     } catch (error) {
@@ -762,7 +762,7 @@ const TripPlanScreen = () => {
     try {
       setLoadingParticipants(true);
       await axios.post(
-        `http://192.168.31.48:8000/trip/${tripId}/addParticipant`,
+        `https://travelapp-32u1.onrender.com/trip/${tripId}/addParticipant`,
         {userId},
       );
       await fetchParticipants();
@@ -784,7 +784,7 @@ const TripPlanScreen = () => {
       setLoadingParticipants(true);
 
       await axios.delete(
-        `http://192.168.31.48:8000/trip/${tripId}/removeParticipant/${userId}`,
+        `https://travelapp-32u1.onrender.com/trip/${tripId}/removeParticipant/${userId}`,
       );
       await fetchParticipants();
     } catch (error) {
@@ -2803,7 +2803,7 @@ export default TripPlanScreen;
 //     try {
 //       // Call the API to send the invite
 //       const response = await axios.post(
-//         'http://192.168.31.48:8000/sendInviteEmail',
+//         'https://travelapp-32u1.onrender.com/sendInviteEmail',
 //         // const response = await axios.post(
 //         //   'http://localhost:8000/sendInviteEmail',
 //         {

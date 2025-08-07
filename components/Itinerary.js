@@ -84,7 +84,7 @@ const Itinerary = ({route, itinerary, setOpenModal, refreshItinerary}) => {
     setOnModalClose(() => async () => {
       try {
         const response = await axios.delete(
-          `http://192.168.31.48:8000/trips/${tripId}/itinerary/${activityId}`,
+          `https://travelapp-32u1.onrender.com/trips/${tripId}/itinerary/${activityId}`,
         );
 
         console.log('Delete response:', response.data);
