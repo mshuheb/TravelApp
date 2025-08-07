@@ -84,6 +84,15 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
+        buildConfigField "String", "GOOGLE_MAPS_API_KEY", "\"${GOOGLE_MAPS_API_KEY}\""
+        manifestPlaceholders["GOOGLE_MAPS_API_KEY"] = GOOGLE_MAPS_API_KEY
+        externalNativeBuild {
+    cmake {
+        arguments += ["-DCMAKE_MAKE_PROGRAM=D:\\SHOAIB\\APPLICATIONS\\SDK\\cmake\\3.22.1\\bin\\ninja.exe", "-DCMAKE_OBJECT_PATH_MAX=1024"]
+
+    }
+}
     }
     signingConfigs {
         debug {
@@ -106,10 +115,15 @@ android {
         }
     }
 }
+project.ext.vectoricons = [
+    iconFontNames: [ 'MaterialIcons.ttf', 'FontAwesome.ttf','AntDesign.ttf','Ionicons.ttf','MaterialCommunityIcons.ttf','Feather.ttf','Entypo.ttf' ] // Add required fonts
+]
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
+     implementation 'com.facebook.android:facebook-android-sdk:18.1.3'
 
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")

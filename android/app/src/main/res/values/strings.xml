@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">TravelApp</string>
+    <string name="app_name">PlanEase</string>
+    <string name="facebook_app_id">982623580719577</string>
+    <string name="facebook_client_token">81f5136eae35eb232a4987d4863a9d6d</string>
 </resources>

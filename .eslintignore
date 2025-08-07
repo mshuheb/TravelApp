@@ -1,0 +1,13 @@
+node_modules/
+android/
+ios/
+screens/
+navigation/
+components/
+api/
+App.js
+AuthContext.js
+ExpenseDetailsStyles.js
+LoginScreen.test.js
+Itinerary.test.js
+Place.test.js
