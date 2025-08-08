@@ -26,10 +26,48 @@ TravelApp is a collaborative mobile platform for planning, organizing, and manag
 <img width="250" alt="Screenshot_1754670643" src="https://github.com/user-attachments/assets/2bbccb3c-ecaa-4b35-9745-72a997a0b634" />
 <img width="250" alt="Screenshot_1754670652" src="https://github.com/user-attachments/assets/751ccc77-54f7-46a1-9b52-761c731916f6" />
 
+# 🛠️ Tech Stack
+- **Frontend:** React Native
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB (with Mongoose)
+- **Authentication:** JWT, bcrypt, Google OAuth, Facebook OAuth
+- **Storage:**
+  - **Media:** AWS S3 (profile photos), Cloudinary (default images), Google Places API (place images)
+  - **Local:** AsyncStorage (tokens, theme), Multer (file upload)
+- **APIs:** Google Places, Google Gemini (Generative AI chat)
+- **Testing:** Jest, React Native Testing Library
 
+# Getting Started
+> **Note:**  [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup)
 
+To start Metro:
+```bash
+# using npm
+npm start
 
+# OR using Yarn
+yarn start
+```
+Command to start your Android or iOS app:
 
+**For Android**
+```bash
+# using npm
+npx react-native run-android
 
+# OR using Yarn
+yarn android
+```
 
+**For iOS**
+```bash
+# using npm
+npx react-native run-ios
 
+# OR using Yarn
+yarn ios
+```
+
+# 🧪 Running Tests
+```bash
+npm test
