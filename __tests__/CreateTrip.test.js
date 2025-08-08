@@ -2,6 +2,7 @@ import {render, fireEvent, waitFor} from '@testing-library/react-native';
 import CreateTrip from '../screens/CreateTrip';
 import {AuthContext, DarkModeContext} from '../AuthContext';
 import {useNavigation, useRoute} from '@react-navigation/native';
+import renderer from 'react-test-renderer';
 
 jest.mock('axios');
 jest.mock('@react-navigation/native', () => {
@@ -11,6 +12,13 @@ jest.mock('@react-navigation/native', () => {
     useNavigation: jest.fn(),
     useRoute: jest.fn(),
   };
+});
+
+describe('CreateTrip component', () => {
+  it('renders correctly', () => {
+    const tree = renderer.create(<CreateTrip />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
 
 describe('CreateTrip', () => {
